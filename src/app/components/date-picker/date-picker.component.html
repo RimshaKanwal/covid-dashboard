@@ -1,0 +1,18 @@
+<div class="date-picker">
+  <form class="row row-cols-sm-auto">
+    <div class="col-12">
+      <div class="input-group">
+        <input
+          class="form-control"
+          placeholder="Select Date"
+          name="dp"
+          [(ngModel)]="model"
+          (ngModelChange)="dateChanged($event)"
+          ngbDatepicker
+          #d="ngbDatepicker"
+        />
+        <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+  </form>
+</div>

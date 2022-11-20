@@ -1,0 +1,19 @@
+<form class="search">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Country Name"
+      aria-label="Filter by Country"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async" [value]="option"
+         (onSelectionChange)="updateMySelection($event)"
+      >
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+</form>
+

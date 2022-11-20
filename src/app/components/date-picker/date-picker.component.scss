@@ -1,0 +1,8 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import '~bootstrap/scss/bootstrap';
+
+
+::ng-deep .bs-datepicker-head {
+  background-color: white;
+  z-index: 1;
+}

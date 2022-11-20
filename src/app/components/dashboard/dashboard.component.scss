@@ -1,0 +1,99 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import '~bootstrap/scss/bootstrap';
+
+.top-bar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 0px;
+
+    .title {
+        margin-left: 50px;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.dashboard {
+    margin: 0 30px;    
+    .loader{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .stats-cards {
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+        column-gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .selectors {
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+
+    .charts {
+        display: flex;
+        margin: 30px 0;
+        justify-content: center;
+        column-gap: 30px;
+        row-gap: 30px;
+        flex-wrap: wrap;
+
+        .chart {
+            flex: 40%;
+        }
+    }
+
+    .header {
+        display: flex;
+
+        > div {
+            width: 50%;
+            margin: 30px;
+        }
+        .info {
+            color: rgb(90, 90, 90);
+            padding: 20px;
+            font-size: 20px;
+            background-color: white;
+
+            .country {
+                color: rgb(93, 98, 181);
+                font-weight: bold;
+            }
+        }
+
+        .right {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            align-items: center;
+            justify-content: center;
+
+            .search {
+                background-color: rgb(90, 90, 90);
+                color: white;
+                width: 100px;
+                height: 30px;
+                border-radius: 4px;
+                margin: auto;
+            }
+        }
+    }
+}

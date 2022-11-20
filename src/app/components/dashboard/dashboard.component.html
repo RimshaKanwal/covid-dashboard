@@ -1,0 +1,40 @@
+ <div class="top-bar">
+    <span class="title">Global Covid Tracker</span>
+  </div>
+<div class="dashboard">
+  <mat-spinner class="loader" *ngIf="isLoading"></mat-spinner>
+  <ng-container *ngIf="!isLoading">
+
+    <div class="header">
+      <div class=left>
+        <p class="info">
+          The coronavirus, or COVID-19, is inciting panic for a number of reasons. It's a new virus, meaning no one has immunity.It is highly contagious, meaning it spreads fast. Its novelty means that scientists aren't completely sure as to how it behaves since they have very little history to go on.
+          <br /><br />
+          Below are the <span class="country">{{getCountry}}</span> stats.
+        </p>
+      </div>
+      <div class="right">
+        <p class="info">Filter Result by Country and Date (To see global data select All from countries list)</p>
+        <div class="selectors">
+          <app-search [options]="countries" (selected)="setCountry($event)"></app-search>
+          <app-date-picker (selectedDate)="setDate($event)"></app-date-picker>
+        </div>
+        <button class="search" mat-raised-button (click)="search()">Search</button>
+      </div>
+    </div>
+      
+    <div class="stats-cards">
+      <ng-container *ngFor="let card of cardData">
+        <app-card [data]="card"></app-card>
+      </ng-container>
+    </div>
+    <div class="charts">
+      <ng-container *ngFor="let chart of casesChartData">
+        <app-chart class="chart" [chartData]="chart"></app-chart>
+      </ng-container>
+    </div>
+    <map [statsData]="stats"></map>
+  </ng-container>
+
+</div>
+
